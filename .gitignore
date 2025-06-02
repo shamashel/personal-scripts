@@ -1,0 +1,4 @@
+**/*.pdf
+output
+split_output
+.venv
