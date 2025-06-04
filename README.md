@@ -3,7 +3,7 @@
 This repository contains a handful of standalone utilities written for my own use. The focus is on keeping each script lightweight and easy to run.
 
 ## Requirements
-- Python 3.12
+- Python 3.13
 - [Poetry](https://python-poetry.org/) for dependency management
 
 ## Provided scripts
