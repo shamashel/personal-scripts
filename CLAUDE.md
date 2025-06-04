@@ -34,7 +34,7 @@ The PDF expansion algorithm in `multiply_pdf_size()` works by:
 3. Appending data as PDF comments (`%% EXTRA DATA...`) to maintain file validity
 4. Reusing portions of original content (minus PDF header) as padding
 
-Key design decision: No external dependencies are used despite `pypdf` being in poetry.lock - the script uses only Python standard library modules (os, argparse, shutil, pathlib).
+Key design decision: `pdf_splitter.py` requires the external `pypdf` library, so dependencies are used in this repo. `pdf_expander.py` itself relies solely on standard library modules (os, argparse, shutil, pathlib).
 
 ## Project Notes
 
