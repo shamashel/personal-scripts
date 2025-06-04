@@ -8,6 +8,7 @@ import os
 import argparse
 from pathlib import Path
 from pypdf import PdfReader, PdfWriter
+import sys
 
 
 def split_pdf(input_path, output_dir, chunk_size=300):
@@ -25,6 +26,9 @@ def split_pdf(input_path, output_dir, chunk_size=300):
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
     
+    if chunk_size <= 0:
+        raise ValueError("chunk_size must be a positive integer")
+
     output_dir.mkdir(parents=True, exist_ok=True)
     
     base_name = input_path.stem
@@ -92,7 +96,7 @@ def main():
         print(f"Error: {e}")
         import traceback
         traceback.print_exc()
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == '__main__':
